@@ -59,7 +59,6 @@ h2 {
 img {
   margin-top: 1rem;
   max-width: 100%;
-  max-height: 32rem;
 }
 
 .horizontal-space {
@@ -738,4 +737,35 @@ blockquote p {
 
 .white-background {
   background-color: white;
+}
+
+.popeye-gifs {
+  position: relative;
+  top: 150px;
+  transition: top 1.5s ease;
+}
+
+.ferris-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.5s ease 0.3s, transform 1.5s ease 0.3s;
+}
+
+.ferris-reveal.remark-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ferris-reveal.remark-visible ~ .popeye-gifs {
+  top: 0px;
+}
+
+
+.megamoj {
+  font-size: 700%;
+}
+
+span.textbox {
+  background: white;
+  border: 2px solid black;
 }

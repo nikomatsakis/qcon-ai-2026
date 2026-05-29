@@ -2,11 +2,11 @@
 
 ## RIIIR: Rewrite It In *Idiomatic* Rust (with AI)
 
-Agentic development is turning the Rust compiler's reputation as a strict taskmaster from a liability to an advantage. The Rust type system helps agents find bugs, and the resulting code runs great. And, as Bun's high-profile port to Rust showed, it's now possible to port massive codebases from one language to another in a matter of weeks. 
+Agentic development has turned the Rust compiler's reputation as a strict taskmaster from a liability to an advantage. The Rust type system helps agents find bugs and the resulting code runs great.
 
-So yes, AI agents and Rust are an exceptionally good fit: but they could be working even better. **Symposium** is a new Rust tool that automatically installs skills, lints, and other tools based on your current project's dependencies and other setup. Symposium helps to address an ironic catch-22 with agentic development: while agents have accelerated the pace of innovation, the agents themselves are effectively a slow-moving average of the web. They do great with long established best practice but are slow to adapt to new things. Symposium helps to correct this by allowing Rust crate authors to directly steer your agent to success.
+But agents and Rust could be working even better. **Symposium** is a new Rust tool that automatically installs skills, lints, and other tools based on your current project's dependencies. It addresses a core tension: while agents have accelerated the pace of innovation, agents themselves lag behind the ecosystem's pace of change. Symposium corrects this by allowing Rust crate authors to directly steer your agent to success.
 
-Symposium shows the power of extensibility but it also shows how the limitations of existing extension mechanisms like skills, MCP servers, and hooks. **Agent Client Protocol (ACP)** is a fast-growing protocol that can change that. ACP's original purpose was to allow editors like Zed and IntelliJ to connect in a uniform way across many agents (NN and counting), but it is also being used to power innovative tools like OpenClaw. I'll explain some of the ongoing work to turn ACP into a general-purpose extension mechanism that can be used to build the next generation of LLM-powered applications.
+Symposium shows the power of extensibility — but also the limitations of existing extension mechanisms like skills, MCP servers, and hooks. **Agent Client Protocol (ACP)** is a fast-growing protocol being extended into a general-purpose mechanism for building the next generation of LLM-powered applications. I'll explain the ongoing work to make that happen.
 
 # Original Qcon AI abstract
 

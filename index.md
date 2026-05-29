@@ -31,103 +31,6 @@ Senior Principal Engineer at Amazon
 
 ---
 
-# "Eat your Spinach"
-
-.center.p80[!["You don't win friends with Salad" from the Simpsons](./images/you-dont-win-friends-with-salad.gif)]
-
----
-
-.center[
-    .p40[![Popeye](./images/popeye-spinach1.gif)]
-    .p40[![Olive oil](./images/popeye-olive-oil.gif)]
-]
-
-.center[.p60[![Strong Ferris](./images/strong-ferris.jpg)]]
-
-.footnote[
-    [Strong ferris source](https://jackyzhen.github.io/rust-vs-go-slides/strongFerris.jpg)
-]
-
----
-
-* amazon
-
----
-
-* microsoft
-
----
-
-google article
-
-* android
-
----
-
-* linux kernel
-
----
-
-I was resigned
-
----
-
-But...something's changed now
-
----
-
-OpenAI
-
----
-
-Bun (Anthropic)
-
----
-
-Within Microsoft
-
----
-
-Within Amazon 
-
----
-
-# What is Symposium?
-
-* Extended Rust toolchain for agentic development
-
---
-* Marquee feature:
-    * Installing skills, hooks, etc based on your dependencies
-
----
-
-# Member of the Rust Foundation's Innovation Lab
-
-![RIL](./images/RIL.png)
-
----
-
-# Why Symposium?
-
----
-
-# Who am I?
-
-One of the lead designers of Rust
-
-.center[.p80[![Ferris](./images/ferris.svg)]]
-
----
-
-# Who am I?
-
-Senior Principal Engineer at Amazon
-
-.center[.p80[![Ferris](./images/spheres.jpg)]]
-
----
-
 # Not heard of Rust?
 
 .abspos.top25.left519.width300px[![Rust](./images/rust-logo-512x512.png)]
@@ -164,36 +67,148 @@ Senior Principal Engineer at Amazon
 
 ---
 
-# Rust has been on a roll lately
+# "Eat your Spinach"
 
-But two main things hold us back:
-
-* "Rewrites are expensive, interop is hard"
-
---
-* "Learning curve"
+.center.p80[!["You don't win friends with Salad" from the Simpsons](./images/you-dont-win-friends-with-salad.gif)]
 
 ---
 
-# Lately... things look a bit different
+.center[
+    .p40[![Popeye](./images/popeye-spinach1.gif)]
+    .p40[![Olive oil](./images/popeye-olive-oil.gif)]
+]
+
+
+---
+
+.center[
+    .p40[![Popeye](./images/popeye-spinach1.gif)]
+    .p40[![Olive oil](./images/popeye-olive-oil.gif)]
+]
+
+.center[.p60[![Strong Ferris](./images/strong-ferris.jpg)]]
+
+.footnote[
+    [Strong ferris source](https://jackyzhen.github.io/rust-vs-go-slides/strongFerris.jpg)
+]
+
+---
+
+# Amazon "then"
+
+.abspos.top62.left153[.p80[![Aurora DSQL](./images/aurora-dsql.png)]]
+
+.footnote[
+    [Link to blog post](https://www.allthingsdistributed.com/2025/05/just-make-it-scale-an-aurora-dsql-story.html)
+]
+
+---
+
+# Amazon "now"
+
+--
+
+.center.megamoj[
+    🤐
+]
+
+---
+
+# Microsoft
 
 > My goal is to eliminate every line of C and C++ from Microsoft by 2030. Our strategy is to combine AI *and* Algorithms to **rewrite Microsoft’s largest codebases**. Our North Star is “1 engineer, 1 month, 1 million lines of code”.<br>
 > <br>
 > &mdash; Distinguished Engineer at Microsoft, [talking about a research project](https://www.linkedin.com/posts/galenh_principal-software-engineer-coreai-microsoft-activity-7407863239289729024-WTzf/) (emphasis mine)
 
----
+???
 
-# *Really* different
-
-> If you’ve already tried Rust and found the learning curve too steep, give it another try with Claude Code or Codex as your pair programmer. **The experience is different when you have an AI that can navigate ownership and borrowing patterns** while you focus on building things.<br>
-> <br>
-> The tools finally catching up to the promise of the language.<br>
-> <br>
-> &mdash; Tigran Bayburtsyan, ["Coding Rust with Claude Code and Codex"](https://tigran.tech/coding-rust-with-claude-code-and-codex/) (emphasis mine)
+I can neither confirm nor deny that similar things are happened at Amazon. And I'm willing to bet at many other companies.
 
 ---
 
-# When using agents...
+.abspos.top36.left104.width700px[![Bun](./images/bun-zig-to-rust.png)]
+
+---
+
+# Roadrunner
+
+.abspos.top141.left206.width600px[![Roadrunner](./images/roadrunner-bird-running.gif)]
+
+
+--
+
+.abspos.arrow.top401.left395.textbox.red[Rust before]
+
+--
+
+.abspos.arrow.top323.left598.textbox.red[Rust with AI]
+
+---
+
+# Eat your vegetables
+
+.center.p80[![Eat your vegetables](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXY5Z2NxZGRjb3Vzam8zeWEydWNrbHJ4MWs1eWlpYWU3MDZncWJtdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2Jed7zxVciKPV9Qs/giphy.gif)]
+
+---
+
+# Roadrunner
+
+.abspos.top147.left453.width400px[![Roadrunner](./images/roadrunner-bird-running.gif)]
+
+--
+
+.abspos.top167.left67.width400px[![Wily](./images/roadrunner-coyote-running.gif)]
+
+--
+
+.abspos.arrow.top328.left134.textbox.red[Mythos]
+
+.abspos.arrow.top315.left617.textbox.red[C++]
+
+.abspos.arrow.top372.left789.textbox.red[Rust]
+
+---
+
+# Rust is used in Android Mobile
+
+.abspos.top98.left45.p80.bordered[!['Move fast and fix things' blog post](images/android-move-fast.png)]
+
+.abspos.top256.left252.width600px.bordered[![Ubuntu](./images/google-memory-unsafe-code.png)]
+
+--
+
+.abspos.arrow.top317.left397.rotate135[![Arrow](./images/Arrow.png)]
+
+.abspos.arrow.top339.left463.rotate135[![Arrow](./images/Arrow.png)]
+
+.abspos.arrow.top385.left524.rotate135[![Arrow](./images/Arrow.png)]
+
+.abspos.arrow.top425.left585.rotate135[![Arrow](./images/Arrow.png)]
+
+.abspos.arrow.top441.left660.rotate135[![Arrow](./images/Arrow.png)]
+
+.abspos.arrow.top465.left723.rotate135[![Arrow](./images/Arrow.png)]
+
+.abspos.arrow.top477.left787.rotate135[![Arrow](./images/Arrow.png)]
+
+.abspos.arrow.top349.left593.textbox.purple[Notice any relationship<br>between these lines?]
+
+---
+
+# Not just Google
+
+!['Rust will save linux from AI'](./images/rust-will-save-linux-from-ai.png)
+
+--
+.abspos.arrow.top256.left651.rotate135[![Arrow](./images/Arrow.png)]
+
+--
+
+.abspos.top351.left561.width200px[![Schitt's creek](./images/schitts-creek-shocked.gif)]
+
+---
+
+# If coding is cheap...
 
 Pick a language, libraries, etc based not on the code you have now,
 
@@ -295,7 +310,6 @@ template:guardrails
 
 ## But could they be better?
 
-
 ---
 name:toasty
 
@@ -305,7 +319,7 @@ name:toasty
 
 ---
 template:toasty
-.abspos.arrow.top163.left6[![Arrow](./images/Arrow.png)]
+.abspos.arrow.top152.left1[![Arrow](./images/Arrow.png)]
 
 ---
 template:toasty
@@ -392,7 +406,7 @@ template: using-toasty
 
 --
 
-.abspos.arrow.top278.left613.rotate110[![Arrow](./images/Arrow.png)]
+.abspos.arrow.top268.left608.rotate110[![Arrow](./images/Arrow.png)]
 
 ---
 
@@ -402,9 +416,7 @@ template: using-toasty
 
 --
 
-.abspos.arrow.top295.left160.rotate110[![Arrow](./images/Arrow.png)]
-
-.abspos.arrow.top295.left160.rotate110[![Arrow](./images/Arrow.png)]
+.abspos.arrow.top288.left168.rotate110[![Arrow](./images/Arrow.png)]
 
 ---
 
@@ -418,9 +430,9 @@ template: using-toasty
 
 --
 
-.abspos.arrow.top584.left228.rotate180[![Arrow](./images/Arrow.png)]
+.abspos.arrow.top566.left230.rotate180[![Arrow](./images/Arrow.png)]
 
-.abspos.arrow.top591.left280.textbox.purple[Rust 2024 hit stable Feb 2025]
+.abspos.arrow.top574.left282.textbox.purple[Rust 2024 hit stable Feb 2025]
 
 ---
 
@@ -442,6 +454,13 @@ template: using-toasty
 # ..and this is where Symposium comes in
 
 .center[.p60[![Symposium](./images/symposium5_vase-ferris.svg)]]
+
+---
+
+# Member of the Rust Foundation's Innovation Lab
+
+![RIL](./images/RIL.png)
+
 
 ---
 
@@ -484,7 +503,7 @@ Which agents do you use? (space to select, enter to confirm):
 
 --
 
-.abspos.top195.left28.arrow[![Arrow](./images/Arrow.png)]
+.abspos.top182.left27.arrow[![Arrow](./images/Arrow.png)]
 
 ---
 
@@ -508,16 +527,16 @@ Source: /Users/nikomat/.cargo/registry/src/index.crates.io/serde-1.0.228
 ---
 template: crate-info
 
-.abspos.arrow.top169.left221.rotate135[![Arrow](./images/Arrow.png)]
+.abspos.arrow.top153.left219.rotate135[![Arrow](./images/Arrow.png)]
 
-.abspos.arrow.top150.left265.textbox.purple[Correct version used by your code]
+.abspos.arrow.top139.left261.textbox.purple[Correct version used by your code]
 
 ---
 template: crate-info
 
-.abspos.arrow.top257.left340.rotate210[![Arrow](./images/Arrow.png)]
+.abspos.arrow.top237.left326.rotate210[![Arrow](./images/Arrow.png)]
 
-.abspos.arrow.top308.left373.textbox.purple[Let the agent browse full sources]
+.abspos.arrow.top280.left374.textbox.purple[Let the agent browse full sources]
 
 ---
 
