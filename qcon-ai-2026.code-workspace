@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../gosim-paris-2026"
+		},
+		{
+			"path": "../rusts-big-moment-2026"
+		}
+	],
+	"settings": {}
+}
