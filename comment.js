@@ -1052,6 +1052,7 @@ converter.convertMarkdown = function (content, links, inline) {
 
 function convertMarkdown (content, links, insideContentClass) {
   var i, tag, markdown = '', html;
+  var placeholders = [];
 
   for (i = 0; i < content.length; ++i) {
     if (typeof content[i] === 'string') {
@@ -1059,9 +1060,12 @@ function convertMarkdown (content, links, insideContentClass) {
     }
     else {
       tag = content[i].block ? 'div' : 'span';
-      markdown += '<' + tag + ' class="' + content[i].class + '">';
-      markdown += convertMarkdown(content[i].content, links, !content[i].block);
-      markdown += '</' + tag + '>';
+      var inner = convertMarkdown(content[i].content, links, !content[i].block);
+      var rendered = '<' + tag + ' class="' + content[i].class + '">' + inner + '</' + tag + '>';
+      var placeholder = '<!--COMMENT-PLACEHOLDER-' + placeholders.length + '-->';
+      placeholders.push(rendered);
+      markdown = markdown.replace(/\n[ \t]+$/, '\n');
+      markdown += placeholder;
     }
   }
 
@@ -1073,6 +1077,10 @@ function convertMarkdown (content, links, insideContentClass) {
   }
   var tokens = lexer.lex(markdown.replace(/^\s+/, ''));
   html = marked.Parser.parse(tokens);
+
+  for (i = 0; i < placeholders.length; i++) {
+    html = html.replace('<!--COMMENT-PLACEHOLDER-' + i + '-->', placeholders[i]);
+  }
 
   if (insideContentClass) {
     element.innerHTML = html;
@@ -19015,7 +19023,6 @@ function Slide (slideIndex, slideNumber, slide, template) {
 function inherit (slide, template) {
   inheritProperties(slide, template);
   inheritContent(slide, template);
-  inheritNotes(slide, template);
 }
 
 function inheritProperties (slide, template) {
@@ -19044,7 +19051,8 @@ function inheritProperties (slide, template) {
 function ignoreProperty (property) {
   return property === 'name' ||
     property === 'layout' ||
-    property === 'count';
+    property === 'count' ||
+    property === 'skip';
 }
 
 function inheritContent (slide, template) {
@@ -19077,12 +19085,6 @@ function deepCopyContent(target, content) {
       });
       deepCopyContent(target.content[target.content.length-1], content[i].content);
     }
-  }
-}
-
-function inheritNotes (slide, template) {
-  if (template.notes) {
-    slide.notes = template.notes + '\n\n' + slide.notes;
   }
 }
 
@@ -19346,7 +19348,7 @@ function createSlides (slideshowSource, options) {
           return excludedClasses.indexOf(c) !== -1;
         }).length === 0;
 
-    if (slideIsIncluded && slide.properties.layout !== 'true' && slide.properties.count !== 'false') {
+    if (slideIsIncluded && slide.properties.layout !== 'true' && slide.properties.skip !== 'true' && slide.properties.count !== 'false') {
       slideNumber++;
       slides.byNumber[slideNumber] = [];
     }
@@ -19359,6 +19361,10 @@ function createSlides (slideshowSource, options) {
 
     if (slide.properties.layout === 'true') {
       layoutSlide = slideViewModel;
+    } else if (slide.properties.skip === 'true') {
+      // Named skip slides are already registered in the local byName map
+      // above for `template: foo` lookup. They are intentionally not pushed
+      // to the slide list, not added to slides.byName, and not counted.
     } else {
       if (slideIsIncluded) {
         slides.push(slideViewModel);

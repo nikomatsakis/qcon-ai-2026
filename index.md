@@ -26,8 +26,34 @@ Senior Principal Engineer at Amazon
 .center[.p60[![Amazon logo](./images/amazon-logo.png)]]
 
 ---
+# Takeaways
 
-# Been working on Rust a long time
+* Rust + AI = marshmallows + chocolate 🍫
+
+---
+# Takeaways
+
+* Rust + AI = marshmallows + chocolate 🍫
+* Symposium + Rust + AI = **s'mores** 😋
+
+.p80[.center[![s'more](./images/smore.jpg)]]
+
+---
+# Takeaways
+
+* Rust + AI = marshmallows + chocolate 🍫
+* Symposium + Rust + AI = **s'mores** 😋
+* Portability across agents today is **hard** 😠
+
+---
+# Takeaways
+
+* Rust + AI = marshmallows + chocolate 🍫
+* Symposium + Rust + AI = **s'mores** 😋
+* Portability across agents today is **hard** 😠
+* Agent Client Protocol (ACP) **could solve it** 👏🏽
+
+.abspos.top298.left310.width300px[![Color me curious](./images/color-me-curious.gif)]
 
 ---
 
@@ -94,7 +120,7 @@ Senior Principal Engineer at Amazon
 
 ---
 
-# Amazon "then"
+# Rust at Amazon
 
 .abspos.top62.left153[.p80[![Aurora DSQL](./images/aurora-dsql.png)]]
 
@@ -104,7 +130,7 @@ Senior Principal Engineer at Amazon
 
 ---
 
-# Amazon "now"
+# Latest developments for Rust at Amazon
 
 --
 
@@ -137,11 +163,11 @@ I can neither confirm nor deny that similar things are happened at Amazon. And I
 
 --
 
-.abspos.arrow.top401.left395.textbox.red[Rust before]
+.abspos.top401.left395.textbox.red[Rust before]
 
 --
 
-.abspos.arrow.top323.left598.textbox.red[Rust with AI]
+.abspos.top323.left598.textbox.red[Rust with AI]
 
 ---
 
@@ -161,11 +187,11 @@ I can neither confirm nor deny that similar things are happened at Amazon. And I
 
 --
 
-.abspos.arrow.top328.left134.textbox.red[Mythos]
+.abspos.top328.left134.textbox.red[Mythos]
 
-.abspos.arrow.top315.left617.textbox.red[C++]
+.abspos.top353.left616.textbox.red[Memory<br>unsafety]
 
-.abspos.arrow.top372.left789.textbox.red[Rust]
+.abspos.top276.left818.textbox.red[Rust]
 
 ---
 
@@ -443,7 +469,7 @@ template: using-toasty
 ## ...the Rust org cannot help
 
 .center[![Help me obi-wan kanobe, you're my only help](./images/help-me-obi-wan.gif)]
-.abspos.arrow.top366.left313.textbox.purple[&nbsp;&nbsp;Anthropic<sup>1</sup>&nbsp;&nbsp;]
+.abspos.arrow.top348.left316.textbox.purple[&nbsp;&nbsp;Anthropic<sup>1</sup>&nbsp;&nbsp;]
 
 .footnote[
     <sup>1</sup> I should say: I tried that toasty example twice, and the second time, Claude did use Toasty 0.5. But it still made a Rust crate in the 2021 edition.
@@ -550,6 +576,252 @@ template: crate-info
 
 ---
 
+# Packaging up skills in the central repository
+
+.abspos.top102.left175.width50px[![github](./images/github.png)]
+
+.abspos.top127.left237[`symposium-dev/recommendations`]
+
+--
+
+.abspos.bluebox.top193.left174.width250px[
+```text
+toasty/
+    SYMPOSIUM.toml
+    create-model/
+        SKILL.md
+```
+]
+
+--
+
+.abspos.purplebox.top179.left405.width400px[
+```toml
+# SYMPOSIUM.toml
+name = "toasty"
+crates = ["toasty"]
+
+[[skills]]
+source.path = "."
+```
+]
+
+.abspos.arrow.top210.left351.rotate335[![Arrow](./images/Arrow.png)]
+
+--
+
+.abspos.purplebox.top379.left231.width600px[
+```markdown
+# SKILL.md
+---
+description: Create a model using the toasty crate
+---
+
+Here are code examples that create toasty models...
+```
+]
+
+.abspos.arrow.top321.left304.rotate65[![Arrow](./images/Arrow.png)]
+
+---
+name:pkgwith
+
+# Packaging up skills with your crate
+
+.abspos.top102.left175.width50px[![github](./images/github.png)]
+
+.abspos.top127.left237[`symposium-dev/recommendations`]
+
+.abspos.bluebox.top193.left174.width250px[
+```text
+toasty/
+    SYMPOSIUM.toml
+```
+]
+
+.abspos.purplebox.top169.left365.width400px[
+```toml
+# SYMPOSIUM.toml
+name = "toasty"
+crates = ["toasty"]
+
+[[skills]]
+source = "crate"
+```
+]
+
+---
+template: pkgwith
+
+.abspos.arrow.top323.left326[![Arrow](./images/Arrow.png)]
+
+---
+template: pkgwith
+
+.abspos.top399.left175.width50px[![github](./images/github.png)]
+
+.abspos.top423.left237[`tokio-rs/toasty`]
+
+.abspos.bluebox.top480.left173.width250px[
+```text
+skills/
+    create-model/
+        SKILL.md
+```
+]
+
+--
+
+.abspos.purplebox.top455.left359.width500px[
+```markdown
+# SKILL.md
+---
+description: Create a model using the ...
+---
+...
+```
+]
+
+--
+
+.abspos.arrow.top258.left174.rotate315[![Arrow](./images/Arrow.png)]
+.abspos.top314.left33.textbox[
+    Temporary restriction<br>
+    for security reasons
+]
+
+---
+# Security implications
+
+Letting dependencies install skill introduces a new threat vector.
+
+But not fundamentally different from `build.rs` or other hooks.
+
+---
+name: mcp
+
+# Packaging up MCP servers in the central repository
+
+.abspos.top102.left250.width50px[![github](./images/github.png)]
+
+.abspos.top127.left307[`symposium-dev/recommendations`]
+
+.abspos.bluebox.top193.left174.width250px[
+```text
+my-crate/
+    SYMPOSIUM.toml
+```
+]
+
+.abspos.purplebox.top179.left405.width400px[
+```toml
+# SYMPOSIUM.toml
+name = "my-crate"
+crates = ["my-crate"]
+
+[[installations]]
+name = "my-crate-mcp"
+source = "cargo"
+crate = "my-crate-helper"
+version = "1.0.0"
+args = ["--mcp"]
+
+[[mcp-server]]
+name = "my-crate"
+command = "my-crate-mcp"
+```
+]
+
+---
+template:mcp
+
+.abspos.arrow.top301.left367[![Arrow](./images/Arrow.png)]
+
+.abspos.top321.left112.textbox[Something installable]
+
+---
+template:mcp
+
+.abspos.arrow.top393.left363[![Arrow](./images/Arrow.png)]
+
+.abspos.top413.left65.textbox[Install with `cargo install`]
+
+---
+template:mcp
+
+.abspos.arrow.top562.left364[![Arrow](./images/Arrow.png)]
+
+.abspos.top561.left109.textbox[Install and<br>configure mcp-server]
+
+---
+name: hooks
+
+# Packaging up hooks in the central repository
+
+.abspos.top102.left250.width50px[![github](./images/github.png)]
+
+.abspos.top127.left307[`symposium-dev/recommendations`]
+
+.abspos.bluebox.top193.left174.width250px[
+```text
+my-crate/
+    SYMPOSIUM.toml
+```
+]
+
+.abspos.purplebox.top166.left405.width400px[
+```toml
+# SYMPOSIUM.toml
+name = "my-crate"
+crates = ["my-crate"]
+
+[[installations]]
+name = "my-crate-helper"
+source = "cargo"
+crate = "my-crate-hook"
+version = "1.0.0"
+args = ["--hook"]
+
+[[hooks]]
+name = "check-usage"
+event = "PreToolUse"
+command = "my-crate:hooks"
+```
+]
+
+
+---
+template:hooks
+
+.abspos.arrow.top319.left365[![Arrow](./images/Arrow.png)]
+
+.abspos.top341.left143.textbox["Hook" installation]
+
+---
+template:hooks
+
+.abspos.arrow.top438.left365[![Arrow](./images/Arrow.png)]
+
+.abspos.top459.left192.textbox[Different args]
+
+
+---
+template:hooks
+
+.abspos.arrow.top549.left364[![Arrow](./images/Arrow.png)]
+
+.abspos.top569.left153.textbox[Event(s) to accept]
+
+---
+# Takeaways
+
+* Rust + AI = marshmallows + chocolate 🍫
+--
+* Symposium + Rust + AI = **s'mores** 😋
+--
+* Portability across agents today is **hard** 😠
+
+---
 # Symposium provides for interoperability
 
 As a library author, write one set of extensions that work across agents...
@@ -578,21 +850,288 @@ As a library author, write one set of extensions that work across agents...
 
 # Symposium does the best we can
 
-* Library (crate) provides extensions
-    * MCP servers
-    * Skills
-    * Hooks
+.abspos.width100px.top112.left678[![crate](./images/crate.png)]
+
+.abspos.textbox.top250.left607.width250px[
+**Library:** provides extensions
+* MCP servers
+* Skills
+* Hooks
+]
+
 --
 
+.abspos.width100px.top123.left92[![user](./images/ferris.png)]
 
-* User picks agent
+
+.abspos.textbox.top250.left16.width250px[
+**User:** picks agent
+* Claude Code
+* Codex
+* OpenCode
+* Gemini
+* etc
+]
 
 --
 
+.abspos.width100px.top113.left374[![user](./images/symposium5_vase-ferris.png)]
 
-* Symposium adapts
-    * Load skills into the right directories for the agent user chose
-    * Converts between hook formats
+.abspos.arrow.top143.left572[![Arrow](./images/Arrow.png)]
+
+.abspos.arrow.top157.left249.rotate180[![Arrow](./images/Arrow.png)]
+
+.abspos.textbox.top250.left287.width300px[
+**Symposium:** adapts
+* Load skills into the right directories for the agent user chose
+* Converts between hook formats
+]
+
+---
+
+# Skills are kinda annoying
+
+.abspos.bluebox.top171.left48.width475px[
+```text
+$ cargo agents init
+Setting up symposium for your user account.
+
+Which agents do you use?
+(space to select, enter to confirm):
+  [ ] Claude Code
+> [x] Codex CLI
+  [ ] GitHub Copilot
+  ...
+```
+]
+
+--
+
+.abspos.purplebox.top170.left545.width250px[
+```
+.agents/
+    create-model/
+        .gitignore
+        SKILL.md
+```
+]
+
+--
+
+.abspos.turquoisebox.top321.left694.width200px[
+```text
+# .gitignore
+*
+```
+]
+
+.abspos.arrow.top271.left710.rotate65[![Arrow](./images/Arrow.png)]
+
+---
+name: annoying2
+
+# Skills are kinda annoying
+
+.abspos.bluebox.top171.left48.width475px[
+
+```text
+$ cargo agents init
+Setting up symposium for your user account.
+
+Which agents do you use?
+(space to select, enter to confirm):
+> [x] Claude Code
+  [x] Codex CLI
+  [ ] GitHub Copilot
+  ...
+```
+]
+
+---
+template: annoying2
+
+.abspos.arrow.top319.left28[![Arrow](./images/Arrow.png)]
+
+
+---
+template: annoying2
+
+.abspos.purplebox.top170.left545.width250px[
+```
+.agents/
+    create-model/
+        .gitignore
+        SKILL.md
+```
+]
+--
+
+.abspos.purplebox.top357.left545.width250px[
+```
+.claude/
+    create-model/
+        .gitignore
+        SKILL.md
+```
+]
+
+.abspos.arrow.top389.left514.rotate315[![Arrow](./images/Arrow.png)]
+
+---
+# Per-project setup
+
+.abspos.width600px.top119.left167[![Foo](./images/bsky-question.png)]
+
+--
+
+.abspos.width600px.top280.left222[![Foo](./images/bsky-answer.png)]
+
+--
+
+.abspos.arrow.top259.left489.rotate135[![Arrow](./images/Arrow.png)]
+
+
+---
+name: ppsp1
+
+# Per-project setup, portable
+
+.abspos.purplebox.top100.left20.width500px[
+```bash
+my-project/
+   .agents/
+      skills/
+         skill-for-my-project/
+            SKILL.md
+```
+]
+
+---
+name: ppsp2
+template: ppsp1
+
+.abspos.bluebox.top87.left369.width500px[
+```bash
+my-project/
+   .agents/
+      skills/
+         skill-for-my-project/
+            SKILL.md
+         skill-from-my-dependencies/
+            .gitignore # "*"
+            SKILL.md
+   .claude/
+      skills/
+         skill-for-my-project/
+            .gitignore # "*"
+            SKILL.md
+         skill-from-my-dependencies/
+            .gitignore # "*"
+            SKILL.md
+```
+]
+
+.abspos.arrow.top318.left217.rotate90[![Arrow](./images/Arrow.png)]
+
+.abspos.width150px.top350.left161[![Symposium](./images/symposium5_vase-ferris.svg)]
+
+.abspos.arrow.top399.left310.rotate0[![Arrow](./images/Arrow.png)]
+
+---
+template: ppsp2
+
+.abspos.arrow.top191.left410[![Arrow](./images/Arrow.png)]
+
+
+---
+template: ppsp2
+
+.abspos.arrow.top250.left410[![Arrow](./images/Arrow.png)]
+
+
+---
+template: ppsp2
+
+.abspos.arrow.top400.left410[![Arrow](./images/Arrow.png)]
+
+
+---
+template: ppsp2
+
+.abspos.arrow.top489.left410[![Arrow](./images/Arrow.png)]
+
+
+
+
+
+---
+# Hooks are a total mess
+
+* Every tool supports different hooks
+* Every tool has a different *format* for hooks 
+
+---
+# Symposium approach
+
+.abspos.width150px.top86.left19[![Symposium](./images/symposium5_vase-ferris.svg)]
+
+.abspos.bluebox.top116.left176.width300px[
+```toml
+[[hooks]]
+name = "check-usage"
+event = "PreToolUse"
+command = "my-crate:hooks"
+```
+]
+
+.abspos.top96.left500.width300px[
+* Symposium hook translates from agent into common format
+* Response translated back
+]
+
+--
+
+.abspos.width70px.top283.left105[![ChatGPT](./images/chat-gpt-logo.png)]
+
+.abspos.purplebox.top316.left176.width300px.small[
+```toml
+[[hooks]]
+name = "check-usage"
+event = "PreToolUse"
+command = "my-crate:hooks"
+format = "codex"
+```
+]
+
+.abspos.top306.left500.width300px[
+* When user chose Codex, Codex directly dispatches the hook
+]
+
+.abspos.width50px.top466.left115[![Claude](./images/claude-logo.png)]
+
+.abspos.purplebox.top485.left176.width300px.small[
+```toml
+[[hooks]]
+name = "check-usage"
+event = "PreToolUse"
+command = "my-crate:hooks"
+format = "claude"
+```
+]
+
+.abspos.top96.top457.left500.width300px[
+* When user chose Claude, Claude directly dispatches the hook
+]
+
+.abspos.top348.left78.fontSize80px[.hook-brace[{]]
+
+.abspos.top392.left-25.rotate270[Specialized<br>variants]
+
+--
+
+.abspos.arrow.top402.left136[![Arrow](./images/Arrow.png)]
+
+.abspos.arrow.top570.left135[![Arrow](./images/Arrow.png)]
 
 ---
 
@@ -600,14 +1139,9 @@ As a library author, write one set of extensions that work across agents...
 
 * If you want something to be amazing:
     * Unleash the ecosystem!
-
---
-
 * Symposium aims to take a good thing (Rust + LLMs) and make it **better**:
     * Skills and extensions based on what you use
     * Up-to-date guidance
-
---
 
 Use Rust? Try it now!
 

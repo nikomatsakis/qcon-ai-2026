@@ -23,6 +23,10 @@ h3 {
   line-height: 150%;
 }
 
+.small .comment-code {
+  font-size: 15px;
+}
+
 .comment-slide-content {
   font-size: 25px;
   padding: 0em 2em 0em 2em;
@@ -768,4 +772,40 @@ blockquote p {
 span.textbox {
   background: white;
   border: 2px solid black;
+}
+div.textbox {
+  background: white;
+  border: 2px solid black;
+}
+
+div.bluebox {
+  background: rgb(144, 180, 233);
+  border: 2px solid black;
+}
+
+div.bluebox {
+  background: rgb(144, 180, 233);
+  border: 2px solid black;
+}
+
+div.purplebox {
+  background: rgb(164, 153, 223);
+  border: 2px solid black;
+}
+
+span.purplebox {
+  background: rgb(164, 153, 223);
+  border: 2px solid black;
+}
+
+div.turquoisebox {
+  background: rgb(99, 193, 219);
+  border: 2px solid black;
+}
+
+.hook-brace {
+  font-size: inherit;
+  line-height: 1;
+  transform: scaleY(3);
+  display: inline-block;
 }
