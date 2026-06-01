@@ -769,6 +769,12 @@ blockquote p {
   font-size: 700%;
 }
 
+.roundbox {
+  border: 3px solid black;
+  border-radius: 12px;
+  background: transparent;
+}
+
 span.textbox {
   background: white;
   border: 2px solid black;

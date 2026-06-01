@@ -469,7 +469,7 @@ template: using-toasty
 ## ...the Rust org cannot help
 
 .center[![Help me obi-wan kanobe, you're my only help](./images/help-me-obi-wan.gif)]
-.abspos.arrow.top348.left316.textbox.purple[&nbsp;&nbsp;Anthropic<sup>1</sup>&nbsp;&nbsp;]
+.abspos.arrow.top327.left317.textbox.purple[&nbsp;&nbsp;Anthropic<sup>1</sup>&nbsp;&nbsp;]
 
 .footnote[
     <sup>1</sup> I should say: I tried that toasty example twice, and the second time, Claude did use Toasty 0.5. But it still made a Rust crate in the 2021 edition.
@@ -813,13 +813,68 @@ template:hooks
 .abspos.top569.left153.textbox[Event(s) to accept]
 
 ---
+# Zooming out -- remember this?
+
+"What library do you recommend for working with sqlite in Rust?"
+
+![Answer](./images/claude-sql-recs.png)
+
+.footnote[
+    For the record, these too are all excellent libraries!
+]
+
+---
+# Getting started
+
+.abspos.megamoj.top63.left609[🤔]
+
+.abspos.top150.left207[.speech-bubble.ferris.right[
+    What crates should I use<br>
+    for my new network service?
+]]
+
+--
+
+.abspos.width200px.top308.left36[![user](./images/symposium5_ferris-only.svg)]
+
+.abspos.top371.left283[.speech-bubble.alan.left[
+    Check out the battery packs!<br>
+    <br>
+    The opinionated-network-service is probably<br>
+    just what you need!
+]]
+
+---
+# Battery pack
+
+.abspos.top150.left92.width150px[![Crates](./images/crate.png)]
+.abspos.top332.left75[Curated crate(s)]
+
+--
+
+.abspos.top144.left386.width150px[![Crates](./images/docs.jpg)]
+.abspos.top327.left360[Documentation & <br>Examples]
+
+--
+
+.abspos.top146.left658.width150px[![Crates](./images/pencil-gear.png)]
+.abspos.top327.left664[Skills]
+
+---
+# Example: Opinionated network service
+
+* Documents key libraries
+* Identifies common performance footguns or mistakes
+* Integrates profiling
+
+---
 # Takeaways
 
 * Rust + AI = marshmallows + chocolate 🍫
---
 * Symposium + Rust + AI = **s'mores** 😋
 --
 * Portability across agents today is **hard** 😠
+* Agent Client Protocol (ACP) **could solve it** 👏🏽
 
 ---
 # Symposium provides for interoperability
@@ -1060,10 +1115,6 @@ template: ppsp2
 
 .abspos.arrow.top489.left410[![Arrow](./images/Arrow.png)]
 
-
-
-
-
 ---
 # Hooks are a total mess
 
@@ -1104,7 +1155,7 @@ format = "codex"
 ]
 
 .abspos.top306.left500.width300px[
-* When user chose Codex, Codex directly dispatches the hook
+* Preferred when using Codex
 ]
 
 .abspos.width50px.top466.left115[![Claude](./images/claude-logo.png)]
@@ -1120,7 +1171,7 @@ format = "claude"
 ]
 
 .abspos.top96.top457.left500.width300px[
-* When user chose Claude, Claude directly dispatches the hook
+* Preferred when using Claude Code
 ]
 
 .abspos.top348.left78.fontSize80px[.hook-brace[{]]
@@ -1132,6 +1183,147 @@ format = "claude"
 .abspos.arrow.top402.left136[![Arrow](./images/Arrow.png)]
 
 .abspos.arrow.top570.left135[![Arrow](./images/Arrow.png)]
+
+---
+
+# There has got to be a better way
+
+Existing extension mechanisms are **ad-hoc**:
+
+* Hacky to virtualize (skills)
+* Non-portable (hooks)
+* Limited (MCP servers, hooks, skills)
+
+---
+
+# ..and this is where the Agent Client Protocol (ACP) comes in
+
+.abspos.top197.left372[![ACP](./images/acp-logo.svg)]
+
+---
+
+# What is the Agent Client Protocol (ACP)?
+
+.abspos.fliplr.width300px.top152.left72[![Agent](./images/sloth-dev-2.png)]
+.abspos.top470.left187[User]
+
+.abspos.width300px.top148.left557[![Bunny Agent](./images/bunny-agent.png)]
+.abspos.top470.left676[Agent]
+
+.abspos.width150px.top225.left395[![Cmdline](./images/cmd-line-icon.png)]
+.abspos.top470.left423[CLI/GUI]
+
+.abspos.roundbox.top143.left386.width450px.height400px[&nbsp;]
+
+---
+
+# What is the Agent Client Protocol (ACP)?
+
+.abspos.fliplr.width300px.top152.left5[![Agent](./images/sloth-dev-2.png)]
+.abspos.top470.left120[User]
+
+.abspos.width300px.top148.left599[![Bunny Agent](./images/bunny-agent.png)]
+.abspos.top470.left676[Agent]
+
+.abspos.width150px.top225.left320[![CLI/GUI](./images/cmd-line-icon.png)]
+.abspos.top470.left345[CLI/GUI]
+
+.abspos.roundbox.top154.left19.width440px.height400px[&nbsp;]
+.abspos.top564.left196[Client]
+
+--
+
+.abspos.arrow.top262.left528[![Arrow](./images/Arrow.png)]
+.abspos.arrow.top310.left528.rotate180[![Arrow](./images/Arrow.png)]
+.abspos.top374.left498[JSON-RPC]
+
+---
+
+# Original idea: 1 editor, N agents
+
+.abspos.fliplr.width300px.top152.left5[![Agent](./images/sloth-dev-2.png)]
+.abspos.top470.left120.textbox[User]
+
+.abspos.width150px.top225.left320[![Cmdline](./images/cmd-line-icon.png)]
+.abspos.top470.left345.textbox[CLI/GUI]
+
+.abspos.width150px.top102.left557[![Bunny Agent](./images/bunny-agent.png)]
+.abspos.width200px.top297.left534[![Penguin Agent](./images/penguin-agent.jpg)]
+.abspos.width240px.top437.left515[![Hamster Agent](./images/hamster-agent.jpg)]
+
+.abspos.roundbox.top154.left19.width440px.height400px[&nbsp;]
+.abspos.top564.left196[Client]
+
+.abspos.top272.left590.textbox[Agent 1]
+.abspos.top427.left590.textbox[Agent 2]
+.abspos.top578.left590.textbox[Agent 3]
+
+.abspos.arrow.top212.left494.rotate315[![Arrow](./images/Arrow.png)]
+.abspos.arrow.top310.left498[![Arrow](./images/Arrow.png)]
+.abspos.arrow.top405.left506.rotate45[![Arrow](./images/Arrow.png)]
+
+---
+
+# Agents
+
+.abspos.width700px.top103.left93.bordered[![Zed](./images/acp-agent-registry.png)]
+
+---
+
+# Editors
+
+.abspos.top100.left124[Zed]
+.abspos.width200px.top128.left49[![Zed](./images/zed.png)]
+
+.abspos.top100.left351[IntelliJ IDEs]
+.abspos.width200px.top131.left332[![Zed](./images/ij-ij.png)]
+.abspos.width200px.top276.left367[![Zed](./images/ij-rr.png)]
+.abspos.width240px.top407.left405[![Zed](./images/ij-pc.png)]
+
+.abspos.top399.left69[Emacs, neovim<br>(via extensions)]
+.abspos.width100px.top466.left35[![Zed](./images/emacs.jpg)]
+.abspos.width125px.top495.left150[![Zed](./images/neovim.png)]
+
+--
+
+.abspos.top99.left596[Obsidian]
+.abspos.width250px.top124.left588[![Zed](./images/obsidian.png)]
+
+--
+
+.abspos.top418.left600[CLIs like Toad, Nori]
+.abspos.width250px.top435.left578[![Zed](./images/toad.png)]
+.abspos.width250px.top481.left635[![Zed](./images/nori.png)]
+
+---
+
+# Beyond editors: ACPX
+
+.abspos.width500px.top85.left214.bordered[![ACPX](./images/acpx.png)]
+.abspos.width500px.top505.left214.bordered[![openclaw](./images/openclaw.png)]
+
+---
+
+# "Agent mods" (work in progress)
+
+.abspos.fliplr.width300px.top153.left7[![Sloth](./images/sloth-dev-2.png)]
+.abspos.top470.left91[Client]
+
+.abspos.width300px.top147.left586[![Bunny Agent](./images/bunny-agent.png)]
+.abspos.top470.left710[Agent]
+
+--
+
+.abspos.width300px.top215.left311[![Filter](./images/filter.jpg)]
+.abspos.top470.left384[Agent mod]
+
+---
+
+# "Agent mods" can...
+
+* Supply slash commands
+* Execute arbitrary code
+* Supply MCP servers
 
 ---
 
