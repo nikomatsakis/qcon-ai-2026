@@ -868,6 +868,12 @@ template:hooks
 * Integrates profiling
 
 ---
+# Rust Commercial Network
+
+.abspos.top113.left108.width700px.bordered[![RCN](./images/rcn.png)]
+
+
+---
 # Takeaways
 
 * Rust + AI = marshmallows + chocolate 🍫
@@ -1031,89 +1037,6 @@ template: annoying2
 ]
 
 .abspos.arrow.top389.left514.rotate315[![Arrow](./images/Arrow.png)]
-
----
-# Per-project setup
-
-.abspos.width600px.top119.left167[![Foo](./images/bsky-question.png)]
-
---
-
-.abspos.width600px.top280.left222[![Foo](./images/bsky-answer.png)]
-
---
-
-.abspos.arrow.top259.left489.rotate135[![Arrow](./images/Arrow.png)]
-
-
----
-name: ppsp1
-
-# Per-project setup, portable
-
-.abspos.purplebox.top100.left20.width500px[
-```bash
-my-project/
-   .agents/
-      skills/
-         skill-for-my-project/
-            SKILL.md
-```
-]
-
----
-name: ppsp2
-template: ppsp1
-
-.abspos.bluebox.top87.left369.width500px[
-```bash
-my-project/
-   .agents/
-      skills/
-         skill-for-my-project/
-            SKILL.md
-         skill-from-my-dependencies/
-            .gitignore # "*"
-            SKILL.md
-   .claude/
-      skills/
-         skill-for-my-project/
-            .gitignore # "*"
-            SKILL.md
-         skill-from-my-dependencies/
-            .gitignore # "*"
-            SKILL.md
-```
-]
-
-.abspos.arrow.top318.left217.rotate90[![Arrow](./images/Arrow.png)]
-
-.abspos.width150px.top350.left161[![Symposium](./images/symposium5_vase-ferris.svg)]
-
-.abspos.arrow.top399.left310.rotate0[![Arrow](./images/Arrow.png)]
-
----
-template: ppsp2
-
-.abspos.arrow.top191.left410[![Arrow](./images/Arrow.png)]
-
-
----
-template: ppsp2
-
-.abspos.arrow.top250.left410[![Arrow](./images/Arrow.png)]
-
-
----
-template: ppsp2
-
-.abspos.arrow.top400.left410[![Arrow](./images/Arrow.png)]
-
-
----
-template: ppsp2
-
-.abspos.arrow.top489.left410[![Arrow](./images/Arrow.png)]
 
 ---
 # Hooks are a total mess
@@ -1342,3 +1265,86 @@ Existing extension mechanisms are **ad-hoc**:
 
 &nbsp;&nbsp;https://agentclientprotocol.com
 ]
+
+---
+# Extra: Per-project setup
+
+.abspos.width600px.top119.left167[![Foo](./images/bsky-question.png)]
+
+--
+
+.abspos.width600px.top280.left222[![Foo](./images/bsky-answer.png)]
+
+--
+
+.abspos.arrow.top259.left489.rotate135[![Arrow](./images/Arrow.png)]
+
+
+---
+name: ppsp1
+
+# Per-project setup, portable
+
+.abspos.purplebox.top100.left20.width500px[
+```bash
+my-project/
+   .agents/
+      skills/
+         skill-for-my-project/
+            SKILL.md
+```
+]
+
+---
+name: ppsp2
+template: ppsp1
+
+.abspos.bluebox.top87.left369.width500px[
+```bash
+my-project/
+   .agents/
+      skills/
+         skill-for-my-project/
+            SKILL.md
+         skill-from-my-dependencies/
+            .gitignore # "*"
+            SKILL.md
+   .claude/
+      skills/
+         skill-for-my-project/
+            .gitignore # "*"
+            SKILL.md
+         skill-from-my-dependencies/
+            .gitignore # "*"
+            SKILL.md
+```
+]
+
+.abspos.arrow.top318.left217.rotate90[![Arrow](./images/Arrow.png)]
+
+.abspos.width150px.top350.left161[![Symposium](./images/symposium5_vase-ferris.svg)]
+
+.abspos.arrow.top399.left310.rotate0[![Arrow](./images/Arrow.png)]
+
+---
+template: ppsp2
+
+.abspos.arrow.top191.left410[![Arrow](./images/Arrow.png)]
+
+
+---
+template: ppsp2
+
+.abspos.arrow.top250.left410[![Arrow](./images/Arrow.png)]
+
+
+---
+template: ppsp2
+
+.abspos.arrow.top400.left410[![Arrow](./images/Arrow.png)]
+
+
+---
+template: ppsp2
+
+.abspos.arrow.top489.left410[![Arrow](./images/Arrow.png)]
