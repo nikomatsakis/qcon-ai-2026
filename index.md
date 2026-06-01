@@ -281,11 +281,11 @@ I can neither confirm nor deny that similar things are happened at Amazon. And I
 
 ## Remember Log4Shell?
 
+You heard it here first, (runtime) reflection is the new memory unsafety.
+
 --
 
-<br>
-
-.center[![Oh snap](./images/oh-snap.gif)]
+.center.p50[![Oh snap](./images/oh-snap.gif)]
 
 ---
 
