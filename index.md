@@ -232,7 +232,7 @@ I can neither confirm nor deny that similar things are happened at Amazon. And I
 
 .abspos.top328.left134.textbox.red[Mythos]
 
-.abspos.top353.left616.textbox.red[Memory<br>unsafety]
+.abspos.top353.left616.textbox.red[Memory<br>unsafety,<br>Reflection]
 
 .abspos.top276.left818.textbox.red[Rust]
 
@@ -274,6 +274,18 @@ I can neither confirm nor deny that similar things are happened at Amazon. And I
 --
 
 .abspos.top351.left561.width200px[![Schitt's creek](./images/schitts-creek-shocked.gif)]
+
+---
+
+# Not just memory safety
+
+## Remember Log4Shell?
+
+--
+
+<br>
+
+.center[![Oh snap](./images/oh-snap.gif)]
 
 ---
 
