@@ -1321,10 +1321,13 @@ Existing extension mechanisms are **ad-hoc**:
 # Takeaways
 
 * Rust + AI = marshmallows + chocolate 🍫
+--
 * Symposium + Rust + AI = **s'mores** 😋
+--
 * Portability across agents today is **hard** 😠
+--
 * Agent Client Protocol (ACP) **could solve it** 👏🏽
-
+--
 .abspos.purplebox.width400px.height220px.top300.left34[
 &nbsp;&nbsp;Try symposium
 
