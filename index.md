@@ -1325,7 +1325,7 @@ Existing extension mechanisms are **ad-hoc**:
 * Portability across agents today is **hard** 😠
 * Agent Client Protocol (ACP) **could solve it** 👏🏽
 
-.abspos.purplebox.width300px.height220px.top301.left106[
+.abspos.purplebox.width400px.height220px.top300.left34[
 &nbsp;&nbsp;Try symposium
 
 ```
@@ -1334,4 +1334,8 @@ Existing extension mechanisms are **ad-hoc**:
 ```
 ]
 
-.abspos.top280.left459.width300px[![Make it so](./images/make-it-so.gif)]
+.abspos.bluebox.width400px.height220px.top300.left452[
+&nbsp;&nbsp;Curious about ACP?
+
+&nbsp;&nbsp;https://agentclientprotocol.com
+]
