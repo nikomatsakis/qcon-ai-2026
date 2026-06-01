@@ -120,6 +120,49 @@ Senior Principal Engineer at Amazon
 
 ---
 
+# Rust + LLM = dream-team?
+
+* Guardrails
+
+--
+template:guardrails
+
+.p80[![Greg Brockman saying Rust is a great language for agents](./images/greg-brockman-tweet.jpg)]
+
+.footnote[
+    Co-founder and president of OpenAI.
+]
+
+
+---
+
+# Rust + LLM = dream-team?
+
+* Guardrails
+* Versatility
+
+--
+
+.abspos.width600px.bordered.top212.left150[![Codex adopts Rust](./images/codex-rust-rewrite.png)]
+
+---
+
+# Rust + LLM = dream-team?
+
+* Guardrails
+* Versatility
+* Efficiency
+
+--
+
+.abspos.top100.left295.width600px.bordered[![Rust win](./images/rust-win-3.png)]
+
+.abspos.top229.left40.width600px.bordered[![Rust win](./images/rust-win-2.png)]
+
+.abspos.top332.left292.width600px.bordered[![Rust win](./images/rust-win-1.png)]
+
+---
+
 # Rust at Amazon
 
 .abspos.top62.left153[.p80[![Aurora DSQL](./images/aurora-dsql.png)]]
@@ -234,17 +277,7 @@ I can neither confirm nor deny that similar things are happened at Amazon. And I
 
 ---
 
-# If coding is cheap...
-
-Pick a language, libraries, etc based not on the code you have now,
-
-but based on the **code you want to maintain going forward**.
-
----
-
 # When your slogan is "a stich in time, saves nine" in an agentic world...
-
---
 
 .abspos.top146.left273.width400px[![Alexis happily flipping her hair!](./images/alexis-happy.gif)]
 
@@ -252,83 +285,18 @@ but based on the **code you want to maintain going forward**.
 
 ---
 
-# Rust + LLM = dream-team?
+# If coding is cheap...
 
-* Guardrails
+Pick a language, libraries, etc based not on the code you have now,
 
---
-template:guardrails
-
-.p80[![Greg Brockman saying Rust is a great language for agents](./images/greg-brockman-tweet.jpg)]
-
-.footnote[
-    Co-founder and president of OpenAI.
-]
-
-
----
-
-# Rust + LLM = dream-team?
-
-* Guardrails
-* Versatility
+but based on the **code you want to maintain going forward**.
 
 --
 
-.abspos.width600px.bordered.top212.left150[![Codex adopts Rust](./images/codex-rust-rewrite.png)]
+So why not...
 
----
-
-# Rust + LLM = dream-team?
-
-* Guardrails
-* Versatility
-* Efficiency
-
---
-
-.abspos.top100.left295.width600px.bordered[![Rust win](./images/rust-win-3.png)]
-
-.abspos.top229.left40.width600px.bordered[![Rust win](./images/rust-win-2.png)]
-
-.abspos.top332.left292.width600px.bordered[![Rust win](./images/rust-win-1.png)]
-
----
-
-# Rust + LLM = dream-team?
-
-* Guardrails
-* Versatility
-* Efficiency
-* Investment in error messages
-
---
-
-.center.megamoj[🤔]
-
----
-
-# Error messages?
-
-![Error message from the Rust compiler](./images/error-messages.png)
-
---
-
-.abspos.arrow.top183.left260.rotate135[![Arrow](./images/Arrow.png)]
-
-.abspos.arrow.top163.left302.textbox.purple[The base error]
-
---
-
-.abspos.arrow.top353.left298.rotate135[![Arrow](./images/Arrow.png)]
-
-.abspos.arrow.top341.left341.textbox.purple[Needed context]
-
---
-
-.abspos.arrow.top441.left244.rotate135[![Arrow](./images/Arrow.png)]
-
-.abspos.arrow.top426.left284.textbox.purple[How to fix]
+* Save money *and*
+* Reduce exposure to vulnerabilities?
 
 ---
 
@@ -523,13 +491,9 @@ Which agents do you use? (space to select, enter to confirm):
 
 ---
 
-# Symposium lets you write skills for crates
+# Crate authors write skills
 
 ![Toasty skill](./images/toasty-skill.png)
-
---
-
-.abspos.top182.left27.arrow[![Arrow](./images/Arrow.png)]
 
 ---
 
@@ -1101,8 +1065,6 @@ format = "claude"
 
 .abspos.top392.left-25.rotate270[Specialized<br>variants]
 
---
-
 .abspos.arrow.top402.left136[![Arrow](./images/Arrow.png)]
 
 .abspos.arrow.top570.left135[![Arrow](./images/Arrow.png)]
@@ -1165,10 +1127,10 @@ Existing extension mechanisms are **ad-hoc**:
 # Original idea: 1 editor, N agents
 
 .abspos.fliplr.width300px.top152.left5[![Agent](./images/sloth-dev-2.png)]
-.abspos.top470.left120.textbox[User]
+.abspos.top470.left120[User]
 
-.abspos.width150px.top225.left320[![Cmdline](./images/cmd-line-icon.png)]
-.abspos.top470.left345.textbox[CLI/GUI]
+.abspos.width125px.top230.left305[![Cmdline](./images/zed.png)]
+.abspos.top470.left340[Zed]
 
 .abspos.width150px.top102.left557[![Bunny Agent](./images/bunny-agent.png)]
 .abspos.width200px.top297.left534[![Penguin Agent](./images/penguin-agent.jpg)]
@@ -1177,9 +1139,9 @@ Existing extension mechanisms are **ad-hoc**:
 .abspos.roundbox.top154.left19.width440px.height400px[&nbsp;]
 .abspos.top564.left196[Client]
 
-.abspos.top272.left590.textbox[Agent 1]
-.abspos.top427.left590.textbox[Agent 2]
-.abspos.top578.left590.textbox[Agent 3]
+.abspos.top272.left590[Agent 1]
+.abspos.top427.left590[Agent 2]
+.abspos.top578.left590[Agent 3]
 
 .abspos.arrow.top212.left494.rotate315[![Arrow](./images/Arrow.png)]
 .abspos.arrow.top310.left498[![Arrow](./images/Arrow.png)]
@@ -1224,6 +1186,44 @@ Existing extension mechanisms are **ad-hoc**:
 
 .abspos.width500px.top85.left214.bordered[![ACPX](./images/acpx.png)]
 .abspos.width500px.top505.left214.bordered[![openclaw](./images/openclaw.png)]
+
+---
+
+# Scripting your agent
+
+.abspos.width850px.top133.left25.bordered[![Retcon](./images/retcon.png)]
+
+---
+name:scripting-your-agent-1
+
+# Scripting your agent
+
+.abspos.bordered.width600px.top110.left129[![Retcon1](./images/retcon-1.png)]
+
+---
+template:scripting-your-agent-1
+
+.abspos.arrow.top152.left115[![Arrow](./images/Arrow.png)]
+
+---
+template:scripting-your-agent-1
+
+.abspos.arrow.top170.left119[![Arrow](./images/Arrow.png)]
+
+---
+template:scripting-your-agent-1
+
+.abspos.arrow.top119.left371.rotate135[![Arrow](./images/Arrow.png)]
+
+--
+
+.abspos.bordered.width600px.top169.left217[![Retcon1](./images/retcon-2.png)]
+
+--
+
+
+.abspos.arrow.top297.left487.rotate215[![Arrow](./images/Arrow.png)]
+
 
 ---
 
