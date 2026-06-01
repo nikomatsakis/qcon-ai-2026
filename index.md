@@ -1318,28 +1318,20 @@ Existing extension mechanisms are **ad-hoc**:
 .abspos.top470.left384[Agent mod]
 
 ---
+# Takeaways
 
-# "Agent mods" can...
+* Rust + AI = marshmallows + chocolate 🍫
+* Symposium + Rust + AI = **s'mores** 😋
+* Portability across agents today is **hard** 😠
+* Agent Client Protocol (ACP) **could solve it** 👏🏽
 
-* Supply slash commands
-* Execute arbitrary code
-* Supply MCP servers
-
----
-
-# Conclusions
-
-* If you want something to be amazing:
-    * Unleash the ecosystem!
-* Symposium aims to take a good thing (Rust + LLMs) and make it **better**:
-    * Skills and extensions based on what you use
-    * Up-to-date guidance
-
-Use Rust? Try it now!
+.abspos.purplebox.width300px.height220px.top301.left106[
+&nbsp;&nbsp;Try symposium
 
 ```
-$ cargo binstall symposium
-$ cargo agents init
+  $ cargo install symposium
+  $ cargo agents init
 ```
+]
 
-.abspos.top353.left459[![Make it so](./images/make-it-so.gif)]
+.abspos.top280.left459.width300px[![Make it so](./images/make-it-so.gif)]
